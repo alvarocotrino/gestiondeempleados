@@ -1,4 +1,19 @@
-.carrusel-item img {
-    width: 100%; 
-    height: auto;
+/* src/app/components/carousel/carousel.component.css */
+
+.my-carousel-image {
+  max-height: 700px; /* Define la altura máxima que deseas para tus imágenes */
+  object-fit: cover; /* Recorta la imagen si es necesario para que cubra el espacio sin distorsionarse */
+  /* Puedes añadir más estilos aquí si los necesitas, por ejemplo, para centrar la imagen */
+}
+
+/* Opcional: para controlar la altura de todo el contenedor interno del carrusel */
+.carousel-inner {
+  max-height: 700px; /* Es buena práctica que este sea el mismo que el max-height de la imagen */
+  overflow: hidden;  /* Oculta cualquier parte de la imagen que sobresalga */
+}
+
+/* Opcional: para centrar todo el carrusel y controlar su ancho máximo en la página */
+#carouselExampleIndicators {
+  max-width: 2500px; /* Ejemplo de ancho máximo */
+  margin: 30px;    /* Centra el carrusel horizontalmente */
 }
