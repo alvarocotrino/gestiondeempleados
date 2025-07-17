@@ -1,19 +1,24 @@
-/* src/app/components/carousel/carousel.component.css */
+/* Estilos para el carrusel */
 
+/* Asegura que las imágenes dentro del carrusel se ajusten correctamente */
 .my-carousel-image {
-  max-height: 700px; /* Define la altura máxima que deseas para tus imágenes */
-  object-fit: cover; /* Recorta la imagen si es necesario para que cubra el espacio sin distorsionarse */
-  /* Puedes añadir más estilos aquí si los necesitas, por ejemplo, para centrar la imagen */
+  width: 100%; /* Ocupa el 100% del ancho del contenedor */
+  height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+  object-fit: contain; /* ¡Clave! Esto asegura que la imagen completa sea visible dentro del contenedor, escalándola si es necesario. No recortará la imagen. */
+  /* Si quieres que todas las imágenes del carrusel tengan una altura mínima o máxima, puedes añadir: */
+  /* min-height: 300px; */
+  /* max-height: 500px; */
 }
 
-/* Opcional: para controlar la altura de todo el contenedor interno del carrusel */
-.carousel-inner {
-  max-height: 700px; /* Es buena práctica que este sea el mismo que el max-height de la imagen */
-  overflow: hidden;  /* Oculta cualquier parte de la imagen que sobresalga */
-}
-
-/* Opcional: para centrar todo el carrusel y controlar su ancho máximo en la página */
+/* Opcional: Si el contenedor del carrusel tiene una altura fija que causa problemas, puedes ajustarlo */
 #carouselExampleIndicators {
-  max-width: 2500px; /* Ejemplo de ancho máximo */
-  margin: 30px;    /* Centra el carrusel horizontalmente */
+  height: auto; /* Permite que el carrusel se ajuste a la altura de su contenido */
+  /* Si necesitas una altura fija, asegúrate de que sea lo suficientemente grande para tus imágenes */
+  /* Por ejemplo: height: 400px; */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+}
+
+/* Puedes añadir un poco de margen o padding si la imagen se ve muy pegada a los bordes */
+.carousel-inner {
+  padding: 10px 0; /* Ejemplo: 10px de padding arriba y abajo, 0 a los lados */
 }
