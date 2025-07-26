@@ -1,30 +1,30 @@
-import { Component } from '@angular/core';
-import { EmpleadoService } from '../../services/empleado'; // Asegúrate de que la ruta sea correcta
+// src/app/services/empleado.service.ts
 
-@Component({
+import { EmpleadoService } from '../../services/empleado';
+import {Component, OnInit} from'@angular/core';
+
+@ Component({
   selector: 'app-empleado',
-  imports: [],
+  imports: [], // <-- Esto indica que es un componente standalone
   templateUrl: './empleado.html',
-  styleUrl: './empleado.css'
-})
-export class EmpleadoComponent {
-constructor(public empleadoService: EmpleadoService) {
-    // Aquí puedes inicializar cualquier lógica necesaria
-  }
+  styleUrls: './empleado.css'
+  })
+  export class EmpleadoComponent { // <-- ¡ESTA ES LA CLASE QUE SE EXPORTA!
 
-getEmpleados() {
-    this.empleadoService.getEmpleados().subscribe( {
-     next: (data)=> {
-        this.empleadoService.empleado = data;
-      },
+constructor(public empleadoService : EmpleadoService) {
+  ngOnInit()
+  this.getEmpleado();
 
-      error: (error) => {
-        console.error('Error al obtener empleados:', error);
-      }
-     
-
-
-    });
-  }
-
-}
+  
+getEmpleado() {
+    this.empleadoService.getEmpleado().subscribe (
+      {
+      next: data => {
+        this.empleadoService.empleados = data as Empleado[];
+        
+          },
+    error: error => {
+      console.log(error);
+    }
+  },
+  });

@@ -8,7 +8,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "src/app/pages/empleado-list"  ],
   "exclude": [
     "src/**/*.spec.ts"
   ]
